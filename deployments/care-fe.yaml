@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: care-fe-production-deployment
+spec:
+  template:
+    metadata:
+      labels:
+        app: care-fe-production
+    spec:
+      containers:
+        - name: care-fe
+          image: ghcr.io/coronasafe/care_fe:production-latest
+          imagePullPolicy: Always
+          env:
+            - name: deployment-version
+              value: "_BUILD_NUMBER_"
+          ports:
+            - containerPort: 80
+              name: care-fe-prod
+              protocol: TCP
+          resources:
+           requests:
+             memory: "200Mi"
+             cpu: "100m"
+           limits:
+             memory: "300Mi"
+             cpu: "100m"
+  selector:
+    matchLabels:
+      app: care-fe-production

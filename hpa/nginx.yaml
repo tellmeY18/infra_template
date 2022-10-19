@@ -1,0 +1,16 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: care-nginx-production
+  labels:
+    application: care-nginx-production
+    environment: production
+    namespace: default
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1beta1
+    kind: Deployment
+    name: care-nginx-production
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 90

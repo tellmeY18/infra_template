@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: care-dashboard-production
+spec:
+  template:
+    metadata:
+      labels:
+        app: care-dashboard-production
+    spec:
+      containers:
+        - name: dashboard
+          image: ghcr.io/coronasafe/dashboard:production-latest
+          imagePullPolicy: Always
+          env:
+          - name: deployment-version
+            value: "_BUILD_NUMBER_"
+          ports:
+            - containerPort: 80
+              name: care-dashboard
+              protocol: TCP
+          resources:
+           requests:
+             memory: "200Mi"
+             cpu: "200m"
+           limits:
+             memory: "2000Mi"
+             cpu: "1"
+  selector:
+    matchLabels:
+      app: care-dashboard-production

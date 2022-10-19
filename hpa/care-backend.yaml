@@ -1,0 +1,16 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: care-django-production
+  labels:
+    application: care-django
+    environment: production
+    namespace: default
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: care-django-production
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 90

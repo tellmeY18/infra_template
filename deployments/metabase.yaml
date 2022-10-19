@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metabase-production-deployment
+spec:
+  template:
+    metadata:
+      labels:
+        name: metabase
+        app: metabase
+        env: production
+    spec:
+      containers:
+        - name: metabase
+          image: metabase/metabase:latest
+          imagePullPolicy: Always
+          resources:
+           requests:
+             memory: "2Gi"
+             cpu: "500m"
+           limits:
+             memory: "4Gi"
+             cpu: "1"
+          ports:
+            - containerPort: 3000
+              name: metabase
+              protocol: TCP
+          envFrom:
+          - secretRef:
+              name: metabase-production-secrets
+  selector:
+    matchLabels:
+      app: metabase
