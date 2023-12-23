@@ -19,13 +19,25 @@ spec:
             - containerPort: 80
               name: care-fe-prod
               protocol: TCP
-          resources:
-           requests:
-             memory: "200Mi"
-             cpu: "100m"
-           limits:
-             memory: "300Mi"
-             cpu: "100m"
+
+          # resources:
+          #   requests:
+          #     memory: "200Mi"
+          #     cpu: "100m"
+          #   limits:
+          #     memory: "300Mi"
+          #     cpu: "100m"
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html/config.json
+              subPath: config.json
+              name: care-fe-production
+      volumes:
+        - name: care-fe-production
+          configMap:
+            name: care-fe-production
+            items:
+              - key: config.json
+                path: config.json
   selector:
     matchLabels:
       app: care-fe-production

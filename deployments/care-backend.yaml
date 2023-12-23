@@ -11,19 +11,21 @@ spec:
         env: production
         namespace: default
     spec:
+#      imagePullSecrets:
+#        - name: githubreg
       containers:
         - name: care
           image: ghcr.io/coronasafe/care:production-latest
           imagePullPolicy: Always
-          resources:
-           requests:
-             memory: "200Mi"
-             cpu: "200m"
-           limits:
-             memory: "300Mi"
-             cpu: "200m"
+          # resources:
+          #   requests:
+          #     memory: "200Mi"
+          #     cpu: "200m"
+          #   limits:
+          #     memory: "300Mi"
+          #     cpu: "200m"
           command:
-            - /start
+            - /app/start-ecs.sh
           ports:
             - containerPort: 9000
               name: django

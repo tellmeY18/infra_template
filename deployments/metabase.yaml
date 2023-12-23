@@ -14,13 +14,13 @@ spec:
         - name: metabase
           image: metabase/metabase:latest
           imagePullPolicy: Always
-          resources:
-           requests:
-             memory: "2Gi"
-             cpu: "500m"
-           limits:
-             memory: "4Gi"
-             cpu: "1"
+          # resources:
+          #   requests:
+          #     memory: "2Gi"
+          #     cpu: "500m"
+          #   limits:
+          #     memory: "4Gi"
+          #     cpu: "1"
           ports:
             - containerPort: 3000
               name: metabase

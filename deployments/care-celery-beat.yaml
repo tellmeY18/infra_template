@@ -11,17 +11,19 @@ spec:
         env: production
         namespace: default
     spec:
+#      imagePullSecrets:
+#        - name: githubreg
       containers:
         - name: care
           image: ghcr.io/coronasafe/care:production-latest
           imagePullPolicy: Always
-          resources:
-           requests:
-             memory: "200Mi"
-             cpu: "100m"
-           limits:
-             memory: "300Mi"
-             cpu: "100m"
+          # resources:
+          #   requests:
+          #     memory: "200Mi"
+          #     cpu: "100m"
+          #   limits:
+          #     memory: "300Mi"
+          #     cpu: "100m"
           command: [ "/bin/bash", "-c", "--" ]
           args: [ "/app/celery_beat.sh" ]
           envFrom:

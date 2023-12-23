@@ -23,17 +23,17 @@ data:
         if ($http_x_forwarded_proto != "https") {
           return 301 https://$host$request_uri;
         }
-        add_header Access-Control-Allow-Origin "*";
+        # add_header Access-Control-Allow-Origin "*";
         add_header X-XSS-Protection "1; mode=block";
         add_header X-Frame-Options "SAMEORIGIN";
         add_header X-Content-Type-Options nosniff;
         add_header Referrer-Policy "no-referrer, strict-origin-when-cross-origin";
         add_header Feature-Policy "geolocation 'self' ";
-        add_header Powered-By "Coronasafe Network Volunteers (coronasafe.network)";
+        add_header Powered-By "Open HealthCare Network (ohc.network)";
         add_header Support-Email "info@coronasafe.network";
         add_header Source-Code "github.com/coronasafe";
         add_header Licence-Type "MIT";
-        add_header Slogan "Made for India By Kerala";
+        
         add_header Volunteer "volunteers.coronasafe.network";
         add_header Collaborate-On "slack.coronasafe.in";
 
@@ -57,17 +57,17 @@ data:
         if ($http_x_forwarded_proto != "https") {
           return 301 https://$host$request_uri;
         }
-        add_header Access-Control-Allow-Origin "*";
+        # add_header Access-Control-Allow-Origin "*";
         add_header X-XSS-Protection "1; mode=block";
         add_header X-Frame-Options "SAMEORIGIN";
         add_header X-Content-Type-Options nosniff;
         add_header Referrer-Policy "no-referrer, strict-origin-when-cross-origin";
         add_header Feature-Policy "geolocation 'self' ";
-        add_header Powered-By "Coronasafe Network Volunteers (coronasafe.network)";
+        add_header Powered-By "Open HealthCare Network (ohc.network)";
         add_header Support-Email "info@coronasafe.network";
         add_header Source-Code "github.com/coronasafe";
         add_header Licence-Type "MIT";
-        add_header Slogan "Made for India By Kerala";
+        
         add_header Volunteer "volunteers.coronasafe.network";
         add_header Collaborate-On "slack.coronasafe.in";
 
@@ -103,14 +103,14 @@ data:
         add_header X-Content-Type-Options nosniff;
         add_header Referrer-Policy "no-referrer, strict-origin-when-cross-origin";
         add_header Feature-Policy "geolocation 'self' ";
-        add_header Powered-By "Coronasafe Network Volunteers (coronasafe.network)";
+        add_header Powered-By "Open HealthCare Network (ohc.network)";
         add_header Support-Email "info@coronasafe.network";
         add_header Source-Code "github.com/coronasafe";
         add_header Licence-Type "MIT";
-        add_header Slogan "Made for India By Kerala";
+        
         add_header Volunteer "volunteers.coronasafe.network";
         add_header Collaborate-On "slack.coronasafe.in";
-        add_header Access-Control-Allow-Origin "'https://*.example.in https://care.mn.gov.in https://*.coronasafe.network' always";
+        add_header Access-Control-Allow-Origin "'https://*.example.in https://*.coronasafe.network' always";
 
         access_log /dev/stdout;
         error_log /dev/stdout;
@@ -143,14 +143,14 @@ data:
         add_header X-Content-Type-Options nosniff;
         add_header Referrer-Policy "no-referrer, strict-origin-when-cross-origin";
         add_header Feature-Policy "geolocation 'self' ";
-        add_header Powered-By "Coronasafe Network Volunteers (coronasafe.network)";
+        add_header Powered-By "Open HealthCare Network (ohc.network)";
         add_header Support-Email "info@coronasafe.network";
         add_header Source-Code "github.com/coronasafe";
         add_header Licence-Type "MIT";
-        add_header Slogan "Made for India By Kerala";
+        
         add_header Volunteer "volunteers.coronasafe.network";
         add_header Collaborate-On "slack.coronasafe.in";
-        add_header Access-Control-Allow-Origin "'https://*.example.in https://care.mn.gov.in https://*.coronasafe.network' always";
+        add_header Access-Control-Allow-Origin "'https://*.example.in https://*.coronasafe.network' always";
 
         access_log /dev/stdout;
         error_log /dev/stdout;

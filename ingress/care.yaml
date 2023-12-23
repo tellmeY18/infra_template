@@ -16,7 +16,7 @@ spec:
       - metabase.demo.example.in
     secretName: care-tls
   rules:
-    - host: *
+    - host: care.demo.example.in
       http:
         paths:
         - path: /
@@ -24,5 +24,35 @@ spec:
           backend:
             service:
               name: care-nginx-production
-              port:
+              port: 
+                number: 80
+    - host: careapi.demo.example.in
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: care-nginx-production
+              port: 
+                number: 80
+    - host: dashboard.demo.example.in
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: care-nginx-production
+              port: 
+                number: 80
+    - host: metabase.demo.example.in
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: care-nginx-production
+              port: 
                 number: 80

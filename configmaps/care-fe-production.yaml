@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: care-fe-production
+  labels:
+    app: care-fe-production
+    env: production
+    namespace: default
+data:
+  config.json: |
+    {
+      "dashboard_url": "https://metabase.demo.example.in",
+      "github_url": "https://github.com/coronasafe",
+      "coronasafe_url": "https://coronasafe.network?ref=care",
+      "site_url": "care.demo.example.in",
+      "analytics_server_url": "",
+      "header_logo": {
+          "light":"https://cdn.coronasafe.network/header_logo.png",
+          "dark":"https://cdn.coronasafe.network/header_logo.png"
+      },
+      "main_logo": {
+          "light":"https://cdn.coronasafe.network/10bedicu_logo.png",
+          "dark":"https://cdn.coronasafe.network/10bedicu_logo.png"
+      },
+      "state_logo": {
+            "light":"https://cdn.coronasafe.network/10bedicu_logo.png",
+            "dark":"https://cdn.coronasafe.network/10bedicu_logo.png"
+      },
+      "gmaps_api_key": "",
+      "gov_data_api_key": "",
+      "recaptcha_site_key": "",
+      "sentry_dsn": "",
+      "sentry_environment": "prod",
+      "kasp_enabled": false,
+      "kasp_string": "KASP",
+      "kasp_full_string": "Karunya Arogya Suraksha Padhathi",
+      "sample_format_asset_import": "https://spreadsheets.google.com/feeds/download/spreadsheets/Export?key=11JaEhNHdyCHth4YQs_44YaRlP77Rrqe81VSEfg1glko&exportFormat=xlsx",
+      "sample_format_external_result_import": "https://docs.google.com/spreadsheets/d/17VfgryA6OYSYgtQZeXU9mp7kNvLySeEawvnLBO_1nuE/export?format=csv&id=17VfgryA6OYSYgtQZeXU9mp7kNvLySeEawvnLBO_1nuE",
+      "enable_abdm": true
+    }
