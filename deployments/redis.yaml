@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: redis
-          image: redis
+          image: redis/redis-stack-server:6.2.6-v11
           # resources:
           #   requests:
           #     cpu: "100m"
