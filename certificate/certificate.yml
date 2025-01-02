@@ -11,5 +11,4 @@ spec:
   dnsNames:
   - care.demo.example.in
   - careapi.demo.example.in
-  - dashboard.demo.example.in
   - metabase.demo.example.in
