@@ -50,48 +50,6 @@ data:
 
       server {
         listen 80;
-        server_name dashboard.demo.example.in;
-        client_max_body_size 50M;
-        # Hack to enforce SSL.
-
-        if ($http_x_forwarded_proto != "https") {
-          return 301 https://$host$request_uri;
-        }
-        # add_header Access-Control-Allow-Origin "*";
-        add_header X-XSS-Protection "1; mode=block";
-        add_header X-Frame-Options "SAMEORIGIN";
-        add_header X-Content-Type-Options nosniff;
-        add_header Referrer-Policy "no-referrer, strict-origin-when-cross-origin";
-        add_header Feature-Policy "geolocation 'self' ";
-        add_header Powered-By "Open HealthCare Network (ohc.network)";
-        add_header Support-Email "info@coronasafe.network";
-        add_header Source-Code "github.com/coronasafe";
-        add_header Licence-Type "MIT";
-        
-        add_header Volunteer "volunteers.coronasafe.network";
-        add_header Collaborate-On "slack.coronasafe.in";
-
-        access_log /dev/stdout;
-        error_log /dev/stdout;
-
-        location /api {
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header Host $http_host;
-          proxy_redirect off;
-          proxy_pass http://care-django-production:9000;
-        }
-
-        location / {
-          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          proxy_set_header Host $http_host;
-          proxy_redirect off;
-          proxy_pass http://care-dashboard-production;
-        }
-        
-      }
-
-      server {
-        listen 80;
         server_name care.demo.example.in;
         # Hack to enforce SSL.
         client_max_body_size 50M;
